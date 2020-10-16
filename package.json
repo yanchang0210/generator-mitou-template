@@ -1,0 +1,81 @@
+{
+  "name": "mitou-template",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint --ext .ts,vue src && yarn lint:prettier && yarn lint:stylelint",
+    "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "test:unit": "jest",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "vue": "^3.0.1",
+    "vue-router": "4.0.0-beta.2",
+    "vuex": "4.0.0-beta.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/axios": "^0.14.0",
+    "@types/eslint-config-prettier": "^6.11.0",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/jest": "^26.0.10",
+    "@types/prettier": "^2.1.2",
+    "@types/sass": "^1.16.0",
+    "@types/sass-loader": "^8.0.0",
+    "@types/typescript": "^2.0.0",
+    "@types/vue-router": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "@vue/compiler-sfc": "^3.0.1",
+    "@vue/test-utils": "^2.0.0-beta.3",
+    "babel-jest": "^26.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.2.13",
+    "prettier": "2.1.2",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recess-order": "^2.0.4",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.9.7",
+    "vite": "^1.0.0-rc.1",
+    "vue-jest": "^5.0.0-alpha.1"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "commitlint -e $GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "yarn lint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

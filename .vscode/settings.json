@@ -1,0 +1,7 @@
+{
+  "eslint.packageManager": "yarn",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "vue"]
+}
